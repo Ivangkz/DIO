@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>DreamCode</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+
+  <style>
+    header {
+      background-color: #212121; /* Color de fondo similar al fondo general */
+      color: white; /* Color del texto */
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      font-family: 'Arial', sans-serif; /* Fuente similar a la utilizada en el diseño */
+      font-size: 42px; /* Tamaño del texto */
+      margin: 0; /* Eliminar margen predeterminado del encabezado */
+    }
+
+    header h1::after {
+      content: 'Ξ'; /* Agrega el símbolo como contenido después del título */
+      font-size: 50px; /* Tamaño del símbolo */
+      display: inline-block; /* Permite alinear verticalmente */
+      vertical-align: middle; /* Alinea verticalmente con el texto */
+      padding-left: 20px; /* Agrega espacio entre el texto y el símbolo */
+      transition: transform 0.3s; /* Efecto de transición */
+    }
+
+    header:hover h1::after {
+      transform: translateX(10px); /* Desplaza el símbolo hacia la derecha al pasar el cursor */
+    }
+  </style>
+
+</head>
+<body>
+
+	<header>
+		<h1>DreamCode</h1>
+	</header>
+
+<!-- Botón para alternar entre modos -->
+<button class="toggle-btn" id="toggle-mode">
+  <div class="main-circle"></div>
+  <div class="sun-rays"></div>
+</button>
+
+<div class="canvas-wrapper">
+    <!-- Primer recuadro -->
+    <a href="Cscarpet/indexcs.php" class="canvas">
+        <div class="canvas_border">
+            <svg>
+                <defs>
+                    <!-- Definición del gradiente de color morado -->
+                    <linearGradient id="grad-purple" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgb(173,101,204);stop-opacity:1"></stop>
+                        <stop offset="100%" style="stop-color:rgb(93,57,157);stop-opacity:1"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- Rectángulo con gradiente morado -->
+                <rect id="rect-grad" class="rect-gradient" fill="none" stroke="url(#grad-purple)" stroke-linecap="square" stroke-width="4" stroke-miterlimit="30" width="100%" height="100%"></rect>
+            </svg>
+        </div>
+        <div class="canvas_img-wrapper">
+            <img class="canvas_img" src="images/Csharp-logo.png" alt="Csharp-logo Logo">
+        </div>
+        <div class="canvas_copy">
+            <span class="canvas_copy_subtitle">Heading</span>
+            <strong class="canvas_copy_title">Csharp</strong>
+            <strong class="canvas_copy_title">Code</strong>
+            <span class="canvas_copy_details">Details and stuff</span>
+        </div>
+    </a>
+    <!-- Fin del primer recuadro -->
+
+    <!-- Segundo recuadro -->
+    <a href="PyCarpet/indexpy.php" class="canvas">
+        <div class="canvas_border">
+            <svg>
+                <defs>
+                    <!-- Definición del gradiente de color amarillo y azul -->
+                    <linearGradient id="grad-yellow-blue" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FFD000;"></stop>
+                        <stop offset="50%" style="stop-color:#FFD000;"></stop>
+                        <stop offset="50%" style="stop-color:#00AEEF;"></stop>
+                        <stop offset="100%" style="stop-color:#00AEEF;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- Rectángulo con gradiente amarillo y azul -->
+                <rect id="rect-grad" class="rect-gradient" fill="none" stroke="url(#grad-yellow-blue)" stroke-linecap="square" stroke-width="4" stroke-miterlimit="30" width="100%" height="100%"></rect>
+            </svg>
+        </div>
+        <div class="canvas_img-wrapper">
+            <img class="canvas_img" src="images/python-logo.png" alt="python-logo Logo">
+        </div>
+        <div class="canvas_copy">
+            <span class="canvas_copy_subtitle">Heading</span>
+            <strong class="canvas_copy_title">Python</strong>
+            <strong class="canvas_copy_title">Code</strong>
+            <span class="canvas_copy_details">Details and stuff</span>
+        </div>
+    </a>
+    <!-- Fin del segundo recuadro -->
+
+    <!-- Tercer recuadro -->
+    <a href="JavCarpet/indexhl.php" class="canvas">
+        <div class="canvas_border">
+            <svg>
+                <defs>
+                    <!-- Definición del gradiente de color amarillo -->
+                    <linearGradient id="grad-yellow" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#FFD000;"></stop>
+                        <stop offset="100%" style="stop-color:#FFD000;"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- Rectángulo con gradiente amarillo -->
+                <rect id="rect-grad" class="rect-gradient" fill="none" stroke="url(#grad-yellow)" stroke-linecap="square" stroke-width="4" stroke-miterlimit="30" width="100%" height="100%"></rect>
+            </svg>
+        </div>
+        <div class="canvas_img-wrapper">
+            <img class="canvas_img" src="images/javascript-logo.png" alt="JavaScript Logo">
+        </div>
+        <div class="canvas_copy">
+            <span class="canvas_copy_subtitle">Heading</span>
+            <strong class="canvas_copy_title">JavaScript</strong>
+            <strong class="canvas_copy_title">Code</strong>
+            <span class="canvas_copy_details">Details and stuff</span>
+        </div>
+    </a>
+    <!-- Fin del tercer recuadro -->
+</div>
+
+<!-- Definición del gradiente de color morado para el modo oscuro -->
+<svg style="display:none;">
+    <defs>
+        <linearGradient id="grad-purple-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:rgb(80, 36, 107);stop-opacity:1"></stop>
+            <stop offset="100%" style="stop-color:rgb(46, 18, 56);stop-opacity:1"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
+<!-- Definición del gradiente de color amarillo y azul para el modo oscuro -->
+<svg style="display:none;">
+    <defs>
+        <linearGradient id="grad-yellow-blue-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FF8C00;"></stop>
+            <stop offset="50%" style="stop-color:#FF8C00;"></stop>
+            <stop offset="50%" style="stop-color:#001AFF;"></stop>
+            <stop offset="100%" style="stop-color:#001AFF;"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
+<!-- Definición del gradiente de color amarillo para el modo oscuro -->
+<svg style="display:none;">
+    <defs>
+        <linearGradient id="grad-yellow-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#FFD700;"></stop>
+            <stop offset="100%" style="stop-color:#FFD700;"></stop>
+        </linearGradient>
+    </defs>
+</svg>
+
+<script>
+  // JavaScript para alternar el modo oscuro
+  const toggleBtn = document.getElementById('toggle-mode');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+</script>
+
+</body>
+</html>
